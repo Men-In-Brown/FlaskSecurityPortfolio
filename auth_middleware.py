@@ -8,6 +8,7 @@ def token_required(roles=None):
     def decorator(f):
         @wraps(f)
         def decorated(*args, **kwargs):
+            print(request.cookies)
             token = request.cookies.get(current_app.config["JWT_TOKEN_NAME"])
             if not token:
                 return {

@@ -104,7 +104,6 @@ class UserAPI:
                         resp.set_cookie(current_app.config["JWT_TOKEN_NAME"], 
                                 token,
                                 max_age=3600,
-                                secure=True,
                                 httponly=True,
                                 path='/',
                                 samesite='None'  # This is the key part for cross-site requests
@@ -128,6 +127,7 @@ class UserAPI:
                         "error": str(e),
                         "data": None
                 }, 500
+
 
             
     # building RESTapi endpoint

@@ -35,6 +35,8 @@ app.register_blueprint(algorithm_views)
 app.register_blueprint(recipe_views) 
 app.register_blueprint(project_views) 
 
+initUsers()
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
